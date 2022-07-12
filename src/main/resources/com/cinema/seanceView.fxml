@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" style="-fx-background-color: #E6E6FA;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cinema.controllers.SeanceViewController">
+   <children>
+      <GridPane prefHeight="900.0" prefWidth="1600.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="filmTitleTF" minHeight="-Infinity" prefHeight="40.0" promptText="Поиск фильма" style="-fx-background-color: #FFFFFF; -fx-border-color: black #9C27B0A0; -fx-border-width: 1;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" right="20.0" />
+               </GridPane.margin>
+            </TextField>
+            <TableView fx:id="tableSeances" prefHeight="200.0" prefWidth="200.0" style="-fx-border-width: 1; -fx-border-color: black;" GridPane.columnSpan="6" GridPane.rowIndex="1" GridPane.rowSpan="13">
+              <columns>
+                <TableColumn fx:id="filmCol" editable="false" maxWidth="700.0" minWidth="300.0" prefWidth="461.9999694824219" style="-fx-font-size: 20;" text="Название" />
+                <TableColumn fx:id="dateCol" prefWidth="185.33331298828125" style="-fx-font-size: 20;" text="Дата" />
+                  <TableColumn fx:id="timeCol" prefWidth="211.0" style="-fx-font-size: 20;" text="Время" />
+                  <TableColumn fx:id="genreCol" prefWidth="155.66668701171875" style="-fx-font-size: 20;" text="Жанр" />
+                  <TableColumn fx:id="restrictionCol" prefWidth="183.20013427734375" style="-fx-font-size: 20;" text="Ограничение" />
+                  <TableColumn fx:id="hallCol" prefWidth="171.9998779296875" style="-fx-font-size: 20;" text="Зал" />
+              </columns>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TableView>
+            <DatePicker fx:id="dateDP" prefHeight="40.0" prefWidth="200.0" promptText="Выберите дату" style="-fx-font-size: 16;" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <JFXComboBox fx:id="genreCB" focusColor="#9c28b0a1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Жанр" style="-fx-font-size: 20;" visibleRowCount="5" GridPane.columnIndex="2" GridPane.halignment="CENTER" />
+            <JFXComboBox fx:id="restrictionCB" focusColor="#9c28b0a1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Ограничение" style="-fx-font-size: 20;" visibleRowCount="5" GridPane.columnIndex="3" GridPane.halignment="CENTER" />
+            <JFXComboBox fx:id="hallCB" focusColor="#9c28b0a1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="200.0" promptText="Зал" style="-fx-font-size: 20;" visibleRowCount="5" GridPane.columnIndex="4" GridPane.halignment="CENTER" />
+            <JFXButton fx:id="clearFiltersButton" onAction="#clearFiltersButtonClick" pickOnBounds="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #9C27B0A0;" text="Очистить фильтры" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="editSeanceButton" disable="true" onAction="#editSeanceButtonClick" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #9C27B0A0;" text="Редактировать" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="toMenuButton" onAction="#toMenuButtonClick" style="-fx-background-color: #9C27B0A0;" text="В меню" textFill="WHITE" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.rowIndex="13">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
